@@ -33,7 +33,6 @@ printf "${GREEN}Installing Stylus css precompiler...${NC}\n"
 npm install stylus -g
 
 printf "${GREEN}Installing VIM and personal configurations...${NC}\n"
-git submodule add git@github.com:jualjiman/vim-confs-jualjiman.git vim-confs
 apt-get -y install vim
 mkdir ~/.vim
 ln -s $PWD/vim-confs/.vimrc ~/.vimrc

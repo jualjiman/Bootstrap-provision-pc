@@ -1,0 +1,3 @@
+[submodule "vim-confs"]
+	path = vim-confs
+	url = git@github.com:jualjiman/vim-confs-jualjiman.git
