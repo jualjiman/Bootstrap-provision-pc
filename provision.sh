@@ -5,7 +5,6 @@ NC='\033[0m'
 printf "${GREEN}Git configurations...${NC}\n"
 git config --global user.email "jualjiman@gmail.com"
 git config --global user.name "Juan Alberto Jimenez"
-mkdir ~/Git
 
 printf "${GREEN}Adding repositories...${NC}\n"
 # nodejs
