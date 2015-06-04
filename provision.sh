@@ -26,7 +26,7 @@ apt-get -y upgrade
 printf "${GREEN}Installing common tools...${NC}\n"
 apt-get install -y git htop python-pip python-dev cmake build-essential nodejs \
 google-chrome-stable sublime-text-installer qbittorrent gparted virtualbox-4.3 \
-vagrant fabric elementary-tweaks
+vagrant fabric elementary-tweaks python-virtualenv
 
 printf "${GREEN}Installing Stylus css precompiler...${NC}\n"
 npm install stylus -g
