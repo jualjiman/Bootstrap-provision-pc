@@ -27,11 +27,17 @@ apt-get -y update
 apt-get -y upgrade
 
 printf "${GREEN}Installing common tools...${NC}\n"
-apt-get install -y htop python-pip python-dev cmake build-essential nodejs \
-google-chrome-stable sublime-text-installer qbittorrent virtualbox-4.3 \
-vagrant fabric python-virtualenv
+apt-get install -y nmap htop python-pip python-dev cmake build-essential \ 
+nodejs google-chrome-stable sublime-text-installer qbittorrent \
+virtualbox-4.3 fabric python-virtualenv
 
+# Install elementary tweaks
 # apt-get install -y elementary-tweaks gparted
+
+mkdir $PWD/vagrant-installation
+wget https://dl.bintray.com/mitchellh/vagrant/vagrant_1.7.2_x86_64.deb -O $PWD/vagrant-installation/vagrant.deb
+dpkg -i $PWD/vagrant-installation/vagrant.deb 
+rm -rf $PWD/vagrant-installation/
 
 printf "${GREEN}Installing Stylus css precompiler...${NC}\n"
 npm install stylus -g
