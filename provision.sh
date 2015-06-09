@@ -47,11 +47,13 @@ apt-get install -y virtualbox-4.3 fabric python-virtualenv
 # Install elementary tweaks
 # apt-get install -y elementary-tweaks gparted
 
-#printf "${GREEN}Installing vagrant...${NC}\n"
-#mkdir $PWD/vagrant-installation
-#wget https://dl.bintray.com/mitchellh/vagrant/vagrant_1.7.2_x86_64.deb -O $PWD/vagrant-installation/vagrant.deb
-#dpkg -i $PWD/vagrant-installation/vagrant.deb 
-#rm -rf $PWD/vagrant-installation/
+printf "${GREEN}Installing vagrant...${NC}\n"
+mkdir $PWD/vagrant-installation
+wget https://dl.bintray.com/mitchellh/vagrant/vagrant_1.7.2_x86_64.deb -O $PWD/vagrant-installation/vagrant.deb
+dpkg -i $PWD/vagrant-installation/vagrant.deb 
+rm -rf $PWD/vagrant-installation/
+
+pip install flake8
 
 printf "${GREEN}Installing Stylus css precompiler...${NC}\n"
 npm install stylus -g
