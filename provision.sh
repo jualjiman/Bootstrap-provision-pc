@@ -47,11 +47,11 @@ apt-get install -y virtualbox-4.3 fabric python-virtualenv
 # Install elementary tweaks
 # apt-get install -y elementary-tweaks gparted
 
-#printf "${GREEN}Installing vagrant...${NC}\n"
-#mkdir $PWD/vagrant-installation
-#wget https://dl.bintray.com/mitchellh/vagrant/vagrant_1.7.2_x86_64.deb -O $PWD/vagrant-installation/vagrant.deb
-#dpkg -i $PWD/vagrant-installation/vagrant.deb 
-#rm -rf $PWD/vagrant-installation/
+printf "${GREEN}Installing vagrant...${NC}\n"
+mkdir $PWD/vagrant-installation
+wget https://dl.bintray.com/mitchellh/vagrant/vagrant_1.7.2_x86_64.deb -O $PWD/vagrant-installation/vagrant.deb
+dpkg -i $PWD/vagrant-installation/vagrant.deb 
+rm -rf $PWD/vagrant-installation/
 
 printf "${GREEN}Installing Stylus css precompiler...${NC}\n"
 npm install stylus -g
@@ -61,6 +61,7 @@ apt-get -y install vim
 mkdir ~/.vim
 ln -s $PWD/vim-confs/.vimrc ~/.vimrc
 ln -s $PWD/vim-confs/colors ~/.vim/colors
+ln -s $PWD/vim-confs/ftplugin ~/.vim/ftplugin
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 chown -R ${USERNAME}:${USERNAME} ~/.vim
 
@@ -73,4 +74,4 @@ ln -s $PWD/zsh/.zshrc ~/.zshrc
 
 apt-get autoremove
 
-# vim +BundleInstall
+vim +BundleInstall
