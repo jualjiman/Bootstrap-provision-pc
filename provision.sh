@@ -53,6 +53,8 @@ wget https://dl.bintray.com/mitchellh/vagrant/vagrant_1.7.2_x86_64.deb -O $PWD/v
 dpkg -i $PWD/vagrant-installation/vagrant.deb 
 rm -rf $PWD/vagrant-installation/
 
+pip install flake8
+
 printf "${GREEN}Installing Stylus css precompiler...${NC}\n"
 npm install stylus -g
 
