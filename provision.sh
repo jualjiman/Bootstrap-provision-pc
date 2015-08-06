@@ -57,6 +57,7 @@ pip install flake8
 
 printf "${GREEN}Installing Stylus css precompiler...${NC}\n"
 npm install stylus -g
+npm install -g jshint
 
 printf "${GREEN}Installing VIM and personal configurations...${NC}\n"
 apt-get -y install vim
