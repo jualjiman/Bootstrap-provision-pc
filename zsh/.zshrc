@@ -78,3 +78,49 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+#
+vagrant_halt() {
+    if [[ -n $1 ]]; then 
+        vagrant halt
+    fi
+}
+
+fab_project_runserver(){
+    fab environment:vagrant runserver
+}
+
+start_project() {
+    vagrant up
+    fab_project_runserver
+}
+
+go_project(){
+    cd ~/Git/$1
+}
+
+review_other_project() {
+    vagrant_halt $2
+    go_project $1
+    start_project
+}
+
+git_checkout(){
+    git checkout $1
+}
+
+git_new_branch() {
+    git checkout -b $1 $2
+}
+
+git_delete_branch() {
+    git branch -D $1
+}
+
+
+alias revpro=review_other_project
+alias gopro=go_project
+
+alias gc=git_checkout
+alias gcn=git_new_branch
+alias gbd=git_delete_branch
+alias fabrunserver=fab_project_runserver
