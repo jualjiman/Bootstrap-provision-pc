@@ -11,14 +11,6 @@ chown -R ${USERNAME}:${USERNAME} ~/Git
 
 printf "${GREEN}ADDING REPOSITORIES...${NC}\n"
 
-# nodejs
-printf "${GREEN}Node.js...${NC}\n"
-wget -qO- https://deb.nodesource.com/setup_0.12 | bash -
-#add-apt-repository -y ppa:chris-lea/node.js
-
-# elementary tweaks
-# add-apt-repository -y ppa:mpstark/elementary-tweaks-daily
-
 # sublime text 3
 printf "${GREEN}Sublimetext 3...${NC}\n"
 add-apt-repository -y ppa:webupd8team/sublime-text-3
@@ -28,11 +20,6 @@ printf "${GREEN}Google chrome...${NC}\n"
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
 sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
 
-# virtual box
-printf "${GREEN}Virtualbox...${NC}\n"
-sh -c 'echo "deb http://download.virtualbox.org/virtualbox/debian trusty contrib" >> /etc/apt/sources.list'
-wget http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc -O- | apt-key add -
-
 apt-get -y update
 apt-get -y upgrade
 
@@ -40,24 +27,11 @@ printf "${GREEN}INSTALLING MANDATORY TOOLS...${NC}\n"
 apt-get -y install curl
 
 printf "${GREEN}INSTALLING COMMON TOOLS...${NC}\n"
-apt-get install -y nmap htop python-pip python-dev cmake build-essential
-apt-get install -y nodejs google-chrome-stable sublime-text-installer qbittorrent
-apt-get install -y virtualbox-4.3 fabric python-virtualenv
-
-# Install elementary tweaks
-# apt-get install -y elementary-tweaks gparted
-
-printf "${GREEN}Installing vagrant...${NC}\n"
-mkdir $PWD/vagrant-installation
-wget https://dl.bintray.com/mitchellh/vagrant/vagrant_1.7.2_x86_64.deb -O $PWD/vagrant-installation/vagrant.deb
-dpkg -i $PWD/vagrant-installation/vagrant.deb 
-rm -rf $PWD/vagrant-installation/
+apt-get install -y nmap htop python-pip python-dev vim-nox cmake build-essential
+apt-get install -y google-chrome-stable sublime-text-installer qbittorrent
+apt-get install -y fabric python-virtualenv
 
 pip install "flake8>=2.4" "flake8-import-order<0.8"
-
-printf "${GREEN}Installing Stylus css precompiler...${NC}\n"
-npm install stylus -g
-npm install -g jslint
 
 printf "${GREEN}Installing VIM and personal configurations...${NC}\n"
 apt-get -y install vim
