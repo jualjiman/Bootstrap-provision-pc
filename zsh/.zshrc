@@ -50,6 +50,7 @@ plugins=(git)
 # User configuration
 
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+source /home/jualjiman/.local/bin/virtualenvwrapper.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -116,6 +117,10 @@ git_delete_branch() {
     git branch -D $1
 }
 
+git_fetch_upstream() {
+    git fetch upstream $1
+}
+
 
 alias revpro=review_other_project
 alias gopro=go_project
@@ -123,4 +128,4 @@ alias gopro=go_project
 alias gc=git_checkout
 alias gcn=git_new_branch
 alias gbd=git_delete_branch
-alias fabrunserver=fab_project_runserver
+alias gfu=git_fetch_upstream
